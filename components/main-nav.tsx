@@ -5,22 +5,22 @@ import axios from "axios";
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
-import { Button } from "@/components/ui/button"
-import {
-   DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+// import { Icons } from "@/components/icons"
+// import { Button } from "@/components/ui/button"
+// import {
+//    DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuGroup,
+//   DropdownMenuItem,
+//   DropdownMenuLabel,
+//   DropdownMenuPortal,
+//   DropdownMenuSeparator,
+//   DropdownMenuShortcut,
+//   DropdownMenuSub,
+//   DropdownMenuSubContent,
+//   DropdownMenuSubTrigger,
+//   DropdownMenuTrigger,
+// } from "@/components/ui/dropdown-menu"
 
 import {
   NavigationMenu,
@@ -43,7 +43,7 @@ export function MainNav({ items }: MainNavProps) {
   return (
     <div className="flex gap-6 md:gap-10">
       <Link href="/" className="hidden items-center space-x-2 md:flex">
-        <img src="/favicon.svg" alt="" className="h-5 w-5" />
+        <img src="/favicon.ico" alt="" className="h-5 w-5" />
         <span className="hidden font-bold sm:inline-block">
           {siteConfig.name}
         </span>
@@ -52,12 +52,7 @@ export function MainNav({ items }: MainNavProps) {
         <Header />
       </nav>
 
-
-       {/* wrapped code probably works better */}
-
-
-
-      {/* {items?.length ? (
+     {items?.length ? (
         <nav className="hidden gap-6 md:flex">
           {items?.map(
             (item, index) =>
@@ -75,15 +70,17 @@ export function MainNav({ items }: MainNavProps) {
               )
           )}
         </nav>
-      ) : null} */}
+      ) : null}
 
 
 
-      {/* my alternative for comment wrapped code. FYI: Above code is better  */}
+      {/* my alternative comment wrapped code. Does same as above code but probably not best practice.
+       DYR.
+       FYI: Above code is better  */}
 
 
       
-      <DropdownMenu>
+      {/* <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
             variant="ghost"
@@ -105,10 +102,10 @@ export function MainNav({ items }: MainNavProps) {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-          <Link href='/getstarted'>Get Started</Link>
+          <Link href='/'>Get Started</Link>
           </DropdownMenuItem>
             <DropdownMenuItem >
-              <Link href='/prices'>Prices</Link>
+              <Link href='/'>Prices</Link>
             </DropdownMenuItem>
                    <DropdownMenuSub>
                    <DropdownMenuSubTrigger>
@@ -117,10 +114,10 @@ export function MainNav({ items }: MainNavProps) {
                    <DropdownMenuPortal>
                      <DropdownMenuSubContent>
                        <DropdownMenuItem>
-                       <Link href='/saving'>Savings</Link>
+                       <Link href='/'>Savings</Link>
                        </DropdownMenuItem>
                        <DropdownMenuItem>
-                       <Link href='/investment'>Investment</Link>
+                       <Link href='/'>Investment</Link>
                        </DropdownMenuItem>
                      </DropdownMenuSubContent>
                    </DropdownMenuPortal>
@@ -132,30 +129,30 @@ export function MainNav({ items }: MainNavProps) {
                    <DropdownMenuPortal>
                      <DropdownMenuSubContent>
                        <DropdownMenuItem>
-                       <Link href='/about'>Learn more</Link>
+                       <Link href='/'>Learn more</Link>
                        </DropdownMenuItem>
                        <DropdownMenuItem>
-                       <Link href='/transperacy'>Transperacy</Link>
+                       <Link href='/'>Transperacy</Link>
                        </DropdownMenuItem>
                        <DropdownMenuItem>
-                       <Link href='/security'>Security</Link>
+                       <Link href='/'>Security</Link>
                        </DropdownMenuItem>
                      </DropdownMenuSubContent>
                    </DropdownMenuPortal>
                  </DropdownMenuSub>
         </DropdownMenuContent>
-      </DropdownMenu>
+      </DropdownMenu> */}
     </div>
   )
 }
 
-const productsMenuItems: NavItem[] = [ { title: "savings", href: "/saving", description:`Save money ` , 
-subMenu:[{title:'Savings Account', href:"/saving", description:''}] }, { title: "vc", href: "/investment", description:'VC Invest',  subMenu:[{title:'venture capital investment services', href:"/", description:''}] }]
+const productsMenuItems: NavItem[] = [ { title: "savings", href: "/", description:`Save money ` , 
+subMenu:[{title:'Savings Account', href:"/", description:''}] }, { title: "vc", href: "/", description:'VC Invest',  subMenu:[{title:'venture capital investment services', href:"/", description:''}] }]
 
 
-const aboutMenuItems: NavItem[] = [ { title: "about us", description: 'read about us', href: "/about", subMenu:[{title:'Learn', href:"/about", description:''}] }, 
-{ title: "security", description: 'about our scurity', href: "/security", subMenu:[{title:'Our security', href:"/security", description:'our security'}] },
- { title: "Transperacy", description: 'See why Uphold is diffferent about transperacy', href: "/transperacy", subMenu:[{title:'Transperacy', href:"/transperacy", description:'See why we are diffferent about transperacy'}] } ]
+const aboutMenuItems: NavItem[] = [ { title: "about", description: 'read about us', href: "/", subMenu:[{title:'Learn', href:"/", description:''}] }, 
+{ title: "security", description: 'about our scurity', href: "/", subMenu:[{title:'Our security', href:"/", description:'our security'}] },
+ { title: "Transperacy", description: 'See why is diffferent about transperacy', href: "/", subMenu:[{title:'Transperacy', href:"/", description:'See why we are diffferent about transperacy'}] } ]
 
 
 
